@@ -1,6 +1,5 @@
 """
 File Name   : Int_to_Hexa.py
-
 """
 
 import numpy, random
@@ -22,11 +21,13 @@ def dump_coe(filename, x):
       for val in x[:-1]:
          dr = get_hex(val.real*(2**8))
          di = get_hex(val.imag*(2**8))
-         f.write(di+dr+",\n")
+         dr = dr[:4]
+         f.write(di+dr+"\n")
       val = x[-1]
       dr = get_hex(val.real*(2**8))
+      dr = dr[:4]
       di = get_hex(val.imag*(2**8))
-      f.write(di+dr+";\n")
+      f.write(di+dr+"\n")
 '''
 def dump_mem(filename, x):
    with open(filename, "w") as f:
@@ -61,4 +62,4 @@ if __name__ == "__main__" :
    #numpy.savetxt("out_cpp.txt", result, fmt = "%f %f")
 
    dump_coe("inp_hex.mem", data)
-   dump_coe("out_hex.mem", result) # fft apply
+   dump_coe("out_hex.mem", result) # apply fft
