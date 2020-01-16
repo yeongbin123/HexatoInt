@@ -57,8 +57,8 @@ if __name__ == "__main__" :
    data = numpy.array([complex(float(res[i])) for i in range(len(res))])
    result = numpy.fft.fft(data)
 
-   //numpy.savetxt("inp_cpp.txt", data, fmt = "%f %f")
-   //numpy.savetxt("out_cpp.txt", result, fmt = "%f %f")
+   #numpy.savetxt("inp_cpp.txt", data, fmt = "%f %f")
+   #numpy.savetxt("out_cpp.txt", result, fmt = "%f %f")
 
    dump_coe("inp_hex.mem", data)
-   dump_coe("out_hex.mem", result) // fft apply
+   dump_coe("out_hex.mem", result) # fft apply
